@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #4913ec;
+  --color-background-light: #f6f6f8;
+  --color-background-dark: #151022;
+  --color-glass: rgba(30, 28, 39, 0.7);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-surface-dark: #2c2839;
+  --color-border-dark: rgba(255, 255, 255, 0.1);
+
+  --font-display: var(--font-vazirmatn), Manrope, sans-serif;
+  --font-body: var(--font-vazirmatn), sans-serif;
+}
+
+/* Custom Utilities that match Tailwind 3 config but for Tailwind 4 we can just use CSS classes */
+.glass-panel {
+  background: rgba(30, 28, 39, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: linear-gradient(145deg, rgba(30, 28, 39, 0.6) 0%, rgba(30, 28, 39, 0.4) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body {
+  @apply bg-background-dark text-white font-body;
+  min-height: 100vh;
+}
